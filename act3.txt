@@ -1,0 +1,15 @@
+import random
+
+def generar_quini6():
+    return sorted(random.sample(range(1, 46), 6))
+
+def imprimir_y_guardar_resultados():
+    with open("resultados.txt", "w", encoding="utf-8") as archivo:
+        for i in range(5):  # Genera 5 jugadas
+            jugada = generar_quini6()
+            resultado = f"Jugada {i+1}: {jugada}"
+            print(resultado)
+            archivo.write(resultado + "\n")
+
+# Llamar a la función
+imprimir_y_guardar_resultados()
